@@ -1,0 +1,251 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 100vh;
+    background: rgb(24, 33, 70);
+    /* Dark blue banner color */
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo img {
+    width: 60px;
+    filter: invert(100%);
+}
+
+.menu {
+    position: relative;
+}
+
+/* Default menu icon (home) for mobile screen */
+.menu-icon {
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: block;
+}
+
+.menu-list {
+    display: none;
+    position: fixed;
+    top: 70px;
+    /* Position menu below the logo */
+    left: 10px;
+    right: 10px;
+    background: rgb(24, 33, 70);
+    /* Dark blue to match the banner */
+    padding: 20px;
+    list-style: none;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 8px;
+    z-index: 100;
+}
+
+.menu-list li {
+    margin-bottom: 10px;
+}
+
+.menu-list li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.signup-btn {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 5px 15px;
+    background: none;
+}
+
+/* X icon in popup menu for mobile screens */
+.close-icon {
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: none;
+}
+
+/* Display the popup menu and close icon on hover for mobile */
+.menu:hover .menu-list {
+    display: flex;
+}
+
+.menu:hover .close-icon {
+    display: block;
+}
+
+.menu:hover .menu-icon {
+    display: none;
+}
+
+/* Banner and text styling */
+.banner {
+    flex-grow: 1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.app-text {
+    max-width: 50%;
+    text-align: center;
+}
+
+.app-text h2 {
+    font-size: 2.5rem;
+    color: #79ffff;
+    margin-bottom: 20px;
+}
+
+.app-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgb(207, 207, 207);
+}
+
+.app-picture img {
+    max-width: 90%;
+}
+
+.play-btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.play-btn-inner {
+    height: 50px;
+    width: 50px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background-image: linear-gradient(rgb(63, 67, 84), rgb(63, 67, 84)),
+        radial-gradient(circle at top left, #5401c1, #7fffff);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Add space between paragraph and Learn More button */
+.app-text p {
+    margin-bottom: 40px;
+    /* Adjust this value for desired spacing */
+}
+
+.play-btn-inner .fa {
+    font-size: 1.5rem;
+    color: white;
+}
+
+small {
+    font-size: 1.2rem;
+    color: #79ffff;
+    margin-left: 15px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+
+    /* Menu setup for mobile: show home icon by default, X icon on hover */
+    .menu-icon {
+        display: block;
+    }
+
+    .menu-list {
+        display: none;
+    }
+
+    .close-icon {
+        display: none;
+    }
+
+    /* Position image above text on mobile */
+    .banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .app-picture img {
+        max-width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .app-text {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .app-text h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .app-text p {
+        font-size: 0.9rem;
+    }
+
+    .play-btn {
+        margin-top: 20px;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+
+    /* Hide home and X icons on PC screens */
+    .menu-icon,
+    .close-icon {
+        display: none !important;
+    }
+
+    /* Show the menu inline by default */
+    .menu-list {
+        display: flex;
+        position: static;
+        background: none;
+        flex-direction: row;
+        align-items: center;
+        padding: 0;
+    }
+
+    .menu-list li {
+        margin: 0 20px;
+    }
+
+    .banner {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .app-text {
+        max-width: 50%;
+    }
+
+    .app-picture {
+        max-width: 50%;
+    }
+}
